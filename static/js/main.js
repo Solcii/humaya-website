@@ -1,4 +1,5 @@
 // ** ========== Website Data ========== **
+
 const data = {
   menu: [
     { name: "¿Quiénes somos?", link: "#" },
@@ -252,6 +253,8 @@ const data = {
     ],
   },
 };
+
+// ** ========== Generic ========== **
 
 function buildBaseSection() {
   const secTitle = document.createElement("h2");
