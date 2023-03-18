@@ -210,8 +210,9 @@ const data = {
   },
   contact: {
     title: "Contáctanos",
+    image_name: "static\images\contact_section.png",
     description:
-      "Déjanos tu consulta y nuestro personal se pondrá en contacto a la brevedad:",
+      "Déjanos tu consulta y nuestro personal se pondrá en contacto a la brevedad:"
   },
   shops: {
     title: "Encontranos en:",
@@ -360,7 +361,7 @@ function buildProductBanner(product, index){
     productName.classList.add('product-name');
     productDesc.classList.add('product-description');
     productPres.classList.add('product-presentation');
-    seeMoreLink.classList.add('link-btn', 'light');
+    seeMoreLink.classList.add('link-btn');
 
     productImg.setAttribute('src', product.image_name);
     productImg.setAttribute('alt', product.name);
@@ -445,10 +446,84 @@ function buildClientsBanner(clientsInfo){
     return banner;
 }
 
+// ** ========== Contact ========== **
+
+function buildContactSection(){
+    const container = document.querySelector('#contact');
+    const { secTitle, mainWrapper } = buildBaseSection();
+    const image = document.createElement('img');
+    const formWrapper = document.createElement('div');
+    const description = document.createElement('p');
+    const contactForm = buildContactForm();
+
+    secTitle.textContent = data.contact.title;
+    description.textContent = data.contact.description;
+    image.setAttribute('src', data.contact.image_name);
+    image.setAttribute('alt', data.contact.title);
+
+    formWrapper.appendChild(description);
+    formWrapper.appendChild(contactForm);
+    mainWrapper.appendChild(image);
+    mainWrapper.appendChild(formWrapper);
+
+    container.appendChild(secTitle);
+    container.appendChild(mainWrapper);  
+}
+
+function buildContactForm(){
+    const form = document.createElement('form');
+    const nameWrapper = document.createElement('div');
+    const labelName = document.createElement('label');
+    const inputName = document.createElement('input');
+    const emailWrapper = document.createElement('div');
+    const labelEmail = document.createElement('label');
+    const inputEmail = document.createElement('input');
+    const commentsWrapper = document.createElement('div');
+    const labelComments = document.createElement('label');
+    const inputComments = document.createElement('textarea');
+    const sendBtn = document.createElement('button');
+
+    labelName.setAttribute('for', 'name');
+    labelName.textContent = 'Nombre:';
+    inputName.setAttribute('type', 'text');
+    inputName.setAttribute('name', 'name');
+    inputName.setAttribute('placeholder', 'Jane Doe');
+
+    labelEmail.setAttribute('for', 'email');
+    labelEmail.textContent = 'Email:';
+    inputEmail.setAttribute('type', 'email');
+    inputEmail.setAttribute('name', 'email');
+    inputEmail.setAttribute('placeholder', 'janedoe@gmail.com');
+
+    labelComments.setAttribute('for', 'comments');
+    labelComments.textContent = 'Comentarios:';
+    inputComments.setAttribute('name', 'comments');
+    inputComments.setAttribute('placeholder', '¡Hola, soy Jane Doe!');
+
+    sendBtn.textContent = 'Enviar';
+    sendBtn.setAttribute('type', 'submit');
+    sendBtn.classList.add('link-btn');
+
+    nameWrapper.appendChild(labelName);
+    nameWrapper.appendChild(inputName);
+    emailWrapper.appendChild(labelEmail);
+    emailWrapper.appendChild(inputEmail);
+    commentsWrapper.appendChild(labelComments);
+    commentsWrapper.appendChild(inputComments);
+    
+    form.appendChild(nameWrapper)
+    form.appendChild(emailWrapper);
+    form.appendChild(commentsWrapper);
+    form.appendChild(sendBtn)
+
+    return form
+}
+
 (function renderWebsite() {
   buildMenu();
   buildSlider();
   buildQualityBanner();
   buildProductSection();
   buildAboutUsInfo();
+  buildContactSection();
 })();
