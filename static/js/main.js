@@ -190,20 +190,23 @@ const data = {
     title: "Sobre nosotros",
     description:
       "Somos una empresa familiar dedicada desde hace más de 50 años a la elaboración de productos de calidad con sabor a casero.",
-    clients: [
+    clients: {
+        title: "Nuestros clientes",
+        clients_list:[
       {
-        name: "Paulina Cocina",
+        description: "Paulina Cocina",
         image_name: "static/images/paulina.jpg",
       },
       {
-        name: "Maru Botana",
+        description: "Maru Botana",
         image_name: "static/images/botana.jpg",
       },
       {
-        name: "Damian Betular",
+        description: "Damian Betular",
         image_name: "static/images/betular.jpg",
       },
-    ],
+    ]
+}
   },
   contact: {
     title: "Contáctanos",
@@ -254,6 +257,20 @@ function buildBaseSection() {
   return { secTitle, mainWrapper };
 }
 
+function buildCardWithImageAndText(info){
+    const card = document.createElement("div");
+    const cardImg = document.createElement("img");
+    const cardInfo = document.createElement("p");
+    cardImg.setAttribute("src", info.image_name);
+    cardImg.setAttribute("alt", info.description);
+    cardInfo.textContent = info.description;
+    card.classList.add("card");
+    card.appendChild(cardImg);
+    card.appendChild(cardInfo);
+    
+    return card
+}
+
 // ** ========== Menu ========== **
 function buildMenu() {
   const containers = document.querySelectorAll(".nav-bar ul");
@@ -297,15 +314,8 @@ function buildQualityBanner() {
   secTitle.textContent = data.quality.title;
 
   data.quality.advantages.forEach((e) => {
-    const card = document.createElement("div");
-    const cardImg = document.createElement("img");
-    const cardInfo = document.createElement("p");
-    cardImg.setAttribute("src", e.image_name);
-    cardImg.setAttribute("alt", e.description);
-    cardInfo.textContent = e.description;
-    card.classList.add("advantage-card");
-    card.appendChild(cardImg);
-    card.appendChild(cardInfo);
+
+    const card = buildCardWithImageAndText(e)
     mainWrapper.appendChild(card);
   });
 
@@ -403,9 +413,42 @@ function buildNutritionalInfoTable(productInfo, index){
     return container;
 }
 
+// ** ========== About us ========== **
+
+function buildAboutUsInfo(){
+    const container = document.querySelector('#about-us');
+    const { secTitle, mainWrapper } = buildBaseSection();
+    const description = document.createElement('p');
+    const clientsBanner = buildClientsBanner(data.about_us.clients);
+
+    secTitle.textContent = data.about_us.title;
+    description.textContent = data.about_us.description;
+
+    mainWrapper.appendChild(description);
+    mainWrapper.appendChild(clientsBanner);
+    container.appendChild(secTitle);
+    container.appendChild(mainWrapper);
+}
+
+function buildClientsBanner(clientsInfo){
+    const banner = document.createElement('div');
+    const bannerTitle = document.createElement('h3');
+    banner.classList.add('clients-banner');
+    bannerTitle.textContent = clientsInfo.title;
+    banner.appendChild(bannerTitle);
+
+    clientsInfo.clients_list.forEach((e)=>{
+        const card = buildCardWithImageAndText(e);
+        banner.appendChild(card);
+    })
+
+    return banner;
+}
+
 (function renderWebsite() {
   buildMenu();
   buildSlider();
   buildQualityBanner();
   buildProductSection();
+  buildAboutUsInfo();
 })();
