@@ -210,7 +210,7 @@ const data = {
   },
   contact: {
     title: "Contáctanos",
-    image_name: "static\images\contact_section.png",
+    image_name: "static/images/contact_section.png",
     description:
       "Déjanos tu consulta y nuestro personal se pondrá en contacto a la brevedad:"
   },
@@ -519,6 +519,36 @@ function buildContactForm(){
     return form
 }
 
+// ** ========== Shops ========== **
+
+function buildShopsBanner(){
+    const container = document.querySelector('#shops');
+    const { secTitle, mainWrapper } = buildBaseSection();
+    const direction = document.createElement('p');
+    const map = buildMapIframe(data.shops.map);
+    secTitle.textContent = data.shops.title;
+    direction.textContent = data.shops.direction;
+
+    mainWrapper.appendChild(direction);
+    mainWrapper.appendChild(map);
+    container.appendChild(secTitle);
+    container.appendChild(mainWrapper);
+
+}
+
+function buildMapIframe(source){
+    const mapContainer = document.createElement('div');
+    const iframe = document.createElement('iframe');
+    mapContainer.classList.add('map-container');
+
+    iframe.setAttribute('src', source);
+    iframe.style.border = '0';
+    iframe.setAttribute('loading', 'lazy');
+
+    mapContainer.appendChild(iframe);
+    return mapContainer;
+}
+
 (function renderWebsite() {
   buildMenu();
   buildSlider();
@@ -526,4 +556,5 @@ function buildContactForm(){
   buildProductSection();
   buildAboutUsInfo();
   buildContactSection();
+  buildShopsBanner();
 })();
