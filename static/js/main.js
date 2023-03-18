@@ -14,7 +14,7 @@ const data = {
     link: {
       anchor: "#about-us",
       content: "Conocenos",
-    }
+    },
   },
   quality: {
     title: "La mejor calidad para vos",
@@ -35,76 +35,156 @@ const data = {
   },
   products: {
     title: "Productos",
-    catalogue: {
-      primary: [
-        {
-          name: "Dulce de leche tradicional",
-          description:
-            "Elaboración artesanal de principio a fin, con un sabor intenso, receta tradicional.",
-          presentation: "Presentación en frasco de vidrio de 580gr",
-          image_name: "static/images/products/product_1.png",
-          nutritional_info: {
-            portion: "Cada 100gr contiene:",
-            calories: "291Kcal",
-            proteines: "7g",
-            total_fat: "7g",
-            carbos: "50g",
-            sugar: "42g",
-            sodium: "30mg",
-          },
+    catalogue: [
+      {
+        name: "Dulce de leche tradicional",
+        description:
+          "Elaboración artesanal de principio a fin, con un sabor intenso, receta tradicional.",
+        presentation: "Presentación en frasco de vidrio de 580gr",
+        image_name: "static/images/products/product_1.png",
+        nutritional_info: {
+          portion: "Cada 100gr contiene:",
+          table:[
+            {
+                name: 'Calorías',
+                info: '291Kcal'
+            },
+            {
+                name: 'Proteínas',
+                info: '7g'
+            },
+            {
+                name: 'Grasas Totales',
+                info: '7g'
+            },
+            {
+                name: 'Carbohidratos',
+                info: '50g'
+            },
+            {
+                name: 'Azúcar',
+                info: '42g'
+            },
+            {
+                name: 'Sodio',
+                info: '30mg'
+            }
+          ]
         },
-        {
-          name: "Dulce de leche sin azúcar",
-          description:
-            "Elaboración artesanal para cuidar tu silueta sin renunciar a nada endulzado naturalmente con stevia.",
-          presentation: "Presentación en frasco de vidrio de 580gr y 280gr",
-          image_name: "static/images/products/product_2.png",
-          nutritional_info: {
-            portion: "Cada 100gr contiene:",
-            calories: "286Kcal",
-            proteines: "7g",
-            total_fat: "7g",
-            carbos: "55g",
-            sugar: "0g",
-            sodium: "42mg",
-          },
+        category: "primary",
+      },
+      {
+        name: "Dulce de leche sin azúcar",
+        description:
+          "Elaboración artesanal para cuidar tu silueta sin renunciar a nada endulzado naturalmente con stevia.",
+        presentation: "Presentación en frasco de vidrio de 580gr y 280gr",
+        image_name: "static/images/products/product_2.png",
+        nutritional_info: {
+          portion: "Cada 100gr contiene:",
+          table:[
+            {
+                name: 'Calorías',
+                info: '286Kcal'
+            },
+            {
+                name: 'Proteínas',
+                info: '7g'
+            },
+            {
+                name: 'Grasas Totales',
+                info: '7g'
+            },
+            {
+                name: 'Carbohidratos',
+                info: '55g'
+            },
+            {
+                name: 'Azúcar',
+                info: '0g'
+            },
+            {
+                name: 'Sodio',
+                info: '42mg'
+            }
+          ]
         },
-        {
-          name: "Dulce Choconutt",
-          description:
-            "Elaboración artesanal para el capricho dulce, combinación de dulce de leche, chocolate y pasta de avellanas. Una delicia única.",
-          presentation: "Presentación en frasco de vidrio de 280gr",
-          image_name: "static/images/products/product_3.png",
-          nutritional_info: {
-            portion: "Cada 100gr contiene:",
-            calories: "299Kcal",
-            proteines: "7g",
-            total_fat: "6g",
-            carbos: "57g",
-            sugar: "50g",
-            sodium: "137mg",
-          },
+        category: "primary",
+      },
+      {
+        name: "Dulce Choconutt",
+        description:
+          "Elaboración artesanal para el capricho dulce, combinación de dulce de leche, chocolate y pasta de avellanas. Una delicia única.",
+        presentation: "Presentación en frasco de vidrio de 280gr",
+        image_name: "static/images/products/product_3.png",
+        nutritional_info: {
+          portion: "Cada 100gr contiene:",
+          table:[
+            {
+                name: 'Calorías',
+                info: '299Kcal'
+            },
+            {
+                name: 'Proteínas',
+                info: '7g'
+            },
+            {
+                name: 'Grasas Totales',
+                info: '6g'
+            },
+            {
+                name: 'Carbohidratos',
+                info: '57g'
+            },
+            {
+                name: 'Azúcar',
+                info: '50g'
+            },
+            {
+                name: 'Sodio',
+                info: '137mg'
+            }
+          ]
         },
-      ],
-      processed: [
-        {
-          name: "Alfajores de maicena",
-          description:
-            "Alfajores de dulce con coco rallado, relleno con 2cm de pura dulzura. Pudiendo elegir entre dulce de leche tradicional, light o choconutt.",
-          presentation: "Presentación en caja de 6 y 12 alfajores.",
-          image_name: "static/images/products/product_4.png",
-          nutritional_info: {
-            portion: "Cada 75gr (1 alfajor) contiene:",
-            calories: "279Kcal",
-            proteines: "11g",
-            total_fat: "15g",
-            carbos: "25g",
-            sugar: "90g",
-            sodium: "177mg",
-          },
+        category: "primary",
+      },
+      {
+        name: "Alfajores de maicena",
+        description:
+          "Alfajores de dulce con coco rallado, relleno con 2cm de pura dulzura. Pudiendo elegir entre dulce de leche tradicional, light o choconutt.",
+        presentation: "Presentación en caja de 6 y 12 alfajores.",
+        image_name: "static/images/products/product_4.png",
+        nutritional_info: {
+          portion: "Cada 75gr (1 alfajor) contiene:",
+          table:[
+            {
+                name: 'Calorías',
+                info: '279Kcal'
+            },
+            {
+                name: 'Proteínas',
+                info: '11g'
+            },
+            {
+                name: 'Grasas Totales',
+                info: '15g'
+            },
+            {
+                name: 'Carbohidratos',
+                info: '25g'
+            },
+            {
+                name: 'Azúcar',
+                info: '90g'
+            },
+            {
+                name: 'Sodio',
+                info: '177mg'
+            }
+          ]
         },
-      ],
-    },
+        category: "processed",
+      },
+    ],
   },
   about_us: {
     title: "Sobre nosotros",
@@ -166,12 +246,12 @@ const data = {
   },
 };
 
-function buildBaseSection(){
-    const secTitle = document.createElement('h2');
-    const mainWrapper = document.createElement('div');
-    secTitle.classList.add('section-title');
-    mainWrapper.classList.add('section-main-wrapper');
-    return { secTitle , mainWrapper };
+function buildBaseSection() {
+  const secTitle = document.createElement("h2");
+  const mainWrapper = document.createElement("div");
+  secTitle.classList.add("section-title");
+  mainWrapper.classList.add("section-main-wrapper");
+  return { secTitle, mainWrapper };
 }
 
 // ** ========== Menu ========== **
@@ -203,7 +283,7 @@ function buildSlider() {
   title.textContent = data.slider.title;
   description.textContent = data.slider.description;
   link.textContent = data.slider.link.content;
-  link.setAttribute('href', data.slider.link.anchor);
+  link.setAttribute("href", data.slider.link.anchor);
   container.appendChild(title);
   container.appendChild(description);
   container.appendChild(link);
@@ -211,30 +291,121 @@ function buildSlider() {
 
 // ** ========== Quality ========== **
 
-function buildQualityBanner(){
-    const container = document.querySelector('#quality');
-    const { secTitle, mainWrapper} = buildBaseSection();
-    secTitle.textContent = data.quality.title;
+function buildQualityBanner() {
+  const container = document.querySelector("#quality");
+  const { secTitle, mainWrapper } = buildBaseSection();
+  secTitle.textContent = data.quality.title;
 
-    data.quality.advantages.forEach((e)=> {
-        const card = document.createElement('div');
-        const cardImg = document.createElement('img');
-        const cardInfo = document.createElement('p');
-        cardImg.setAttribute('src', e.image_name);
-        cardImg.setAttribute('alt', e.description);
-        cardInfo.textContent = e.description;
-        card.classList.add('advantage-card');
-        card.appendChild(cardImg);
-        card.appendChild(cardInfo);
-        mainWrapper.appendChild(card);
-    })
+  data.quality.advantages.forEach((e) => {
+    const card = document.createElement("div");
+    const cardImg = document.createElement("img");
+    const cardInfo = document.createElement("p");
+    cardImg.setAttribute("src", e.image_name);
+    cardImg.setAttribute("alt", e.description);
+    cardInfo.textContent = e.description;
+    card.classList.add("advantage-card");
+    card.appendChild(cardImg);
+    card.appendChild(cardInfo);
+    mainWrapper.appendChild(card);
+  });
 
-    container.appendChild(secTitle);
-    container.appendChild(mainWrapper);
+  container.appendChild(secTitle);
+  container.appendChild(mainWrapper);
+}
+
+// ** ========== Products ========== **
+
+function buildProductSection() {
+  const container = document.querySelector('#products');
+  const { secTitle, mainWrapper } = buildBaseSection();
+  secTitle.textContent = data.products.title;
+
+  data.products.catalogue.forEach((e, index) => {
+    const productBanner = buildProductBanner(e, index);
+    mainWrapper.appendChild(productBanner);
+  });
+
+  container.appendChild(secTitle);
+  container.appendChild(mainWrapper);
+}
+
+function buildProductBanner(product, index){
+    const banner = document.createElement('div');
+    const productImg = document.createElement('img');
+    const productInfoWrapper = document.createElement('div');
+    const productName = document.createElement('h3');
+    const productDesc = document.createElement('p');
+    const productPres = document.createElement('p');
+    const seeMoreLink = document.createElement('a');
+    const nutritionInfo = buildNutritionalInfoTable(product.nutritional_info, index+1);
+
+    banner.classList.add(product.category, 'product-banner');
+    if(index % 2 === 0){
+        banner.classList.add('even');
+    } else{
+        banner.classList.add('odd');
+    }
+
+    productInfoWrapper.classList.add('product-info');
+    productName.classList.add('product-name');
+    productDesc.classList.add('product-description');
+    productPres.classList.add('product-presentation');
+    seeMoreLink.classList.add('link-btn', 'light');
+
+    productImg.setAttribute('src', product.image_name);
+    productImg.setAttribute('alt', product.name);
+    productName.textContent = product.name;
+    productDesc.textContent = product.description;
+    productPres.textContent = product.presentation;
+    seeMoreLink.textContent = '+ Info';
+    seeMoreLink.setAttribute('href', `#nutritional-info-${index+1}`)
+    nutritionInfo.style.display = 'none';
+
+    productInfoWrapper.appendChild(productName);
+    productInfoWrapper.appendChild(productDesc);
+    productInfoWrapper.appendChild(productPres);
+    productInfoWrapper.appendChild(seeMoreLink);
+    productInfoWrapper.appendChild(nutritionInfo);
+
+    banner.appendChild(productImg);
+    banner.appendChild(productInfoWrapper);
+
+    return banner
+}
+
+function buildNutritionalInfoTable(productInfo, index){
+    const container = document.createElement('div');
+    const title = document.createElement('h4');
+    const description = document.createElement('p');
+    const table = document.createElement('table');
+
+    container.classList.add('nutritional-info');
+    container.setAttribute('id', `nutritional-info-${index}`)
+    title.textContent = 'Información nutricional:';
+    description.textContent = productInfo.portion;
+
+    productInfo.table.forEach((e) =>{
+        const row = document.createElement('tr')
+        const rowName = document.createElement('th');
+        const rowContent = document.createElement('td')
+
+        rowName.textContent = e.name;
+        rowContent.textContent = e.info;
+        row.appendChild(rowName);
+        row.appendChild(rowContent);
+        table.appendChild(row);
+    });
+
+    container.appendChild(title);
+    container.appendChild(description);
+    container.appendChild(table);
+
+    return container;
 }
 
 (function renderWebsite() {
   buildMenu();
   buildSlider();
   buildQualityBanner();
+  buildProductSection();
 })();
