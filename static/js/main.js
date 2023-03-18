@@ -223,7 +223,10 @@ const data = {
     title: "Recetas",
     description:
       "Descubre las mejores recetas de dulce de leche de la mano de Paulina Cocina.",
-    link: "https://www.paulinacocina.net/ingrediente/dulce-de-leche",
+      external_link:{
+        link_text: "Descubre más recetas",
+        link: "https://www.paulinacocina.net/ingrediente/dulce-de-leche",
+      },
     recipes_list: [
       {
         name: "Alfajores marplatenses",
@@ -549,6 +552,71 @@ function buildMapIframe(source){
     return mapContainer;
 }
 
+// ** ========== Recipes ========== **
+
+function buildRecipesBanner(){
+    const container = document.querySelector('#recipes');
+    const { secTitle, mainWrapper } = buildBaseSection();
+    const description = document.createElement('p');
+    const recipesWrapper = document.createElement('div');
+    const seeMoreRecipes = document.createElement('a');
+
+    recipesWrapper.classList.add('recipes-carousel');
+
+    data.recipes.recipes_list.forEach((e)=>{
+        cardRecipe = buildRecipeCard(e);
+        recipesWrapper.appendChild(cardRecipe);
+    })
+    
+    secTitle.textContent = data.recipes.title;
+    description.textContent = data.recipes.description;
+    seeMoreRecipes.textContent = data.recipes.external_link.link_text;
+    seeMoreRecipes.setAttribute('href', data.recipes.external_link.link);
+    seeMoreRecipes.setAttribute('target', '_blank');
+    seeMoreRecipes.classList.add('link-btn');
+
+    mainWrapper.appendChild(description);
+    mainWrapper.appendChild(recipesWrapper);
+    mainWrapper.appendChild(seeMoreRecipes);
+
+    container.appendChild(secTitle);
+    container.appendChild(mainWrapper);   
+}
+
+function buildRecipeCard(recipe){
+    const recipeCard = document.createElement('div');
+    const recipeImg = document.createElement('img');
+    const recipeText = document.createElement('div');
+    const recipeName = document.createElement('p');
+    const recipeDesc = document.createElement('p');
+    const seeRecipeLink = document.createElement('a');
+
+    recipeImg.setAttribute('src', recipe.image_name);
+    recipeImg.setAttribute('alt', recipe.name);
+
+    recipeText.classList.add('text-container');
+
+    recipeName.textContent = recipe.name;
+    recipeName.classList.add('recipe-name');
+
+    recipeDesc.textContent = recipe.description;
+    recipeDesc.classList.add('recipe-description');
+
+    seeRecipeLink.textContent = 'Preparación';
+    seeRecipeLink.setAttribute('href', recipe.link);
+    seeRecipeLink.setAttribute('target', '_blank');
+    seeRecipeLink.classList.add('link-btn');
+
+    recipeText.appendChild(recipeName);
+    recipeText.appendChild(recipeDesc);
+    recipeText.appendChild(seeRecipeLink);
+
+    recipeCard.appendChild(recipeImg);
+    recipeCard.appendChild(recipeText);
+
+    return recipeCard;
+}
+
 (function renderWebsite() {
   buildMenu();
   buildSlider();
@@ -557,4 +625,5 @@ function buildMapIframe(source){
   buildAboutUsInfo();
   buildContactSection();
   buildShopsBanner();
+  buildRecipesBanner();
 })();
