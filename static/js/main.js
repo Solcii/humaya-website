@@ -281,8 +281,19 @@ function buildCardWithImageAndText(info){
 // ** ========== Menu ========== **
 function buildMenu() {
   const containers = document.querySelectorAll(".nav-bar ul");
+  const burguerBtn = document.querySelector('.menu-btn');
+
   containers.forEach((container) => {
     buildMenuElem(container);
+  });
+
+  burguerBtn.addEventListener('click', (btn)=>{
+    containers.forEach((menu)=>{
+        if(menu.classList.contains('header-menu')){
+            menu.classList.toggle('nav-menu-visible');
+        }
+    })
+    burguerBtn.classList.toggle('open');
   });
 }
 
@@ -292,6 +303,8 @@ function buildMenuElem(container) {
     const link = document.createElement("a");
     link.textContent = menu.name;
     link.setAttribute("href", menu.link);
+    link.classList.add('nav-menu-link');
+    menuElem.classList.add('nav-menu-item');
     menuElem.appendChild(link);
     container.appendChild(menuElem);
   });
