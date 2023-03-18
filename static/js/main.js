@@ -25,11 +25,11 @@ const data = {
       },
       {
         description: "sin tacc",
-        image_name: "static/images\no_tacc.png",
+        image_name: "static/images/no_tacc.png",
       },
       {
         description: "sin conservantes",
-        image_name: "static/images\no_preservatives.png",
+        image_name: "static/images/no_preservatives.png",
       },
     ],
   },
@@ -146,25 +146,33 @@ const data = {
         description:
           "Una deliciosa opción para acompañar las meriendas, ese antojo de media noche o compartir con amigos",
         link: "https://www.paulinacocina.net/como-hacer-alfajores-marplatenses-el-mas-alfajor-de-los-alfajores/20395",
-        image_name: "static/images\recipes/alfajor_marplatense.jpg",
+        image_name: "static/images/recipes/alfajor_marplatense.jpg",
       },
       {
         name: "Budín de coco y dulce de leche",
         description:
           "La combinación más clásica, simple y deliciosa del mundo, que no falla nunca.",
         link: "https://www.paulinacocina.net/budin-de-coco-y-dulce-de-leche-una-combinacion-creada-por-los-dioses/20455",
-        image_name: "static/images\recipes/budin_coco.jpg",
+        image_name: "static/images/recipes/budin_coco.jpg",
       },
       {
         name: "Torta Marquise",
         description:
           "Un postre hermoso de la cocina francesa, con una textura y un sabor único que solo una torta de chocolate puede regalarnos.",
         link: "https://www.paulinacocina.net/como-hacer-torta-marquise/25229",
-        image_name: "static/images\recipes/marquise.jpg",
+        image_name: "static/images/recipes/marquise.jpg",
       },
     ],
   },
 };
+
+function buildBaseSection(){
+    const secTitle = document.createElement('h2');
+    const mainWrapper = document.createElement('div');
+    secTitle.classList.add('section-title');
+    mainWrapper.classList.add('section-main-wrapper');
+    return { secTitle , mainWrapper };
+}
 
 // ** ========== Menu ========== **
 function buildMenu() {
@@ -201,7 +209,32 @@ function buildSlider() {
   container.appendChild(link);
 }
 
+// ** ========== Quality ========== **
+
+function buildQualityBanner(){
+    const container = document.querySelector('#quality');
+    const { secTitle, mainWrapper} = buildBaseSection();
+    secTitle.textContent = data.quality.title;
+
+    data.quality.advantages.forEach((e)=> {
+        const card = document.createElement('div');
+        const cardImg = document.createElement('img');
+        const cardInfo = document.createElement('p');
+        cardImg.setAttribute('src', e.image_name);
+        cardImg.setAttribute('alt', e.description);
+        cardInfo.textContent = e.description;
+        card.classList.add('advantage-card');
+        card.appendChild(cardImg);
+        card.appendChild(cardInfo);
+        mainWrapper.appendChild(card);
+    })
+
+    container.appendChild(secTitle);
+    container.appendChild(mainWrapper);
+}
+
 (function renderWebsite() {
   buildMenu();
-  buildSlider()
+  buildSlider();
+  buildQualityBanner();
 })();
