@@ -24,14 +24,26 @@ body{
     display: block;
     width: fit-content;
     font-size: 1.3rem;
+    transition: all .5s ease-in-out;
+    border: 3px solid;
 }
 
 .link-btn.light{
-    border: 3px solid #BCA177;
+    border-color: #BCA177;
     color: #BCA177;
 }
 
 .link-btn.dark{
-    border: 2px solid #684723;
+    border-color: #684723;
     color: #684723;
+}
+
+.link-btn.light:hover{
+    color: #684723;
+    background-color: #BCA177;
+}
+
+.link-btn.dark:hover{
+    color: #BCA177;
+    background-color: #684723;
 }

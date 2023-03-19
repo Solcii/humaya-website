@@ -1,0 +1,113 @@
+/*#products{
+    background-color: #BCA177;
+    border-color: #684723;
+    background-color: #302E2E;
+}*/
+
+#products h2{
+    background-color: #646262;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+#products .section-main-wrapper .product-banner{
+    display: grid; 
+    grid-template-columns: 50% 50%;
+    height: 30rem;
+    overflow: hidden;
+}
+
+#products .section-main-wrapper .product-banner.primary{
+    background-color: #000;
+    color: #fff;
+}
+
+#products .section-main-wrapper .product-banner.processed{
+    color: #684723;
+    background-color: #BCA177;
+}
+
+#products .section-main-wrapper .product-banner.even{
+    grid-template-areas: 'image text';
+}
+
+#products .section-main-wrapper .product-banner.odd{
+    grid-template-areas: 'text image';
+}
+
+#products .section-main-wrapper .product-banner img{
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 30rem;
+}
+
+#products .section-main-wrapper .product-banner.processed img{
+    padding: 3rem 6rem;
+    background-color: #BCA177;
+}
+
+#products .section-main-wrapper .product-banner .product-info{
+    grid-area: text;
+    padding: 5rem;
+    font-weight: 100;
+    max-width: 44rem;
+    margin: auto;
+}
+
+#products .product-banner .product-info .product-name{
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#products .product-banner .product-info .product-description,
+#products .product-banner .product-info .product-presentation{
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+#products .product-banner .product-info .product-presentation{
+    margin-top: 1.5rem;
+    font-weight: 800;
+}
+
+#products .product-banner.primary .product-info .product-name,
+#products .product-banner.primary .product-info .product-presentation{
+    color: #BCA177;
+}
+
+#products .section-main-wrapper .product-banner.processed .product-info .product-description{
+    font-weight: 300;
+}
+
+#products .product-banner .product-info .link-btn{
+    margin: 3rem auto 1rem;
+}
+
+
+@media (max-width: 768px) {
+    #products .section-main-wrapper .product-banner.even,
+    #products .section-main-wrapper .product-banner.odd{
+        grid-template-areas: 'image'
+                             'text';
+        grid-template-columns: 100%;
+        height: auto;
+    }
+    #products .section-main-wrapper .product-banner img{
+        height: 15rem;
+    }
+    #products .section-main-wrapper .product-banner.processed img{
+        padding: 0;
+    }
+    #products .section-main-wrapper .product-banner .product-info{
+        max-width: 100%;
+        padding: 3rem 4rem;
+        text-align: center;
+    }
+}
