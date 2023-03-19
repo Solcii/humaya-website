@@ -9,7 +9,7 @@
 #recipes .section-main-wrapper{
     max-width: 90rem;
     margin: auto;
-    padding-bottom: 3rem;
+    padding: 0 2rem 3rem;
 }
 
 #recipes .section-main-wrapper p{
@@ -69,7 +69,6 @@
     #recipes .section-main-wrapper .recipes-banner{
         grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 0 2rem;
     }
     #recipes .section-main-wrapper .recipes-banner .recipe-card{
         display: grid;
