@@ -295,6 +295,7 @@ function buildMenu() {
     })
     burguerBtn.classList.toggle('open');
   });
+  window.onscroll = function() {menuScrolled()};
 }
 
 function buildMenuElem(container) {
@@ -308,6 +309,15 @@ function buildMenuElem(container) {
     menuElem.appendChild(link);
     container.appendChild(menuElem);
   });
+}
+
+function menuScrolled() {
+  const menu = document.querySelector('header .nav-bar');
+  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+    menu.classList.add('scrolled');
+  } else {
+    menu.classList.remove('scrolled');
+  }
 }
 
 // ** ========== Slider ========== **

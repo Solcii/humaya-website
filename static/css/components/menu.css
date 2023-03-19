@@ -9,6 +9,11 @@ header .nav-bar {
     top: 0;
     left: 0;
     z-index: 100;
+    transition: all .5s ease-in-out;
+}
+
+header .nav-bar.scrolled{
+    background: #fff;
 }
 
 .logo {
@@ -36,6 +41,11 @@ header .nav-bar {
     color: #fff;
     padding: 0.8rem 1.2rem;
     transition: .5s;
+    font-weight: 400;
+}
+
+.nav-bar.scrolled .nav-menu-link{
+    color: #302E2E;
 }
 
 .nav-menu-link:hover {
@@ -117,12 +127,12 @@ header .nav-bar {
     .nav-menu-item {
         margin: 2rem;
     }
+    .nav-bar.scrolled .nav-menu-link,
     .nav-menu-link {
         color: #fff;
         font-weight: 600;
     }
     .nav-menu-link:hover {
-        background: none;
         color: #fff;;
     }
     .menu-btn {
