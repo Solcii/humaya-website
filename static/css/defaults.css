@@ -35,6 +35,7 @@ body{
     font-weight: 800;
     text-transform: uppercase;
     display: block;
+    white-space: nowrap;
     font-size: 1.3rem;
     transition: all .5s ease-in-out;
     border: 3px solid;
