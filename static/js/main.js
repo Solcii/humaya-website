@@ -2,18 +2,18 @@
 
 const data = {
   menu: [
-    { name: "¿Quiénes somos?", link: "#" },
-    { name: "Productos", link: "#" },
-    { name: "Locales", link: "#" },
-    { name: "Contacto", link: "#" },
-    { name: "Recetas", link: "#" },
+    { name: "¿Quiénes somos?", link: "#about-us-anchor" },
+    { name: "Productos", link: "#products-anchor" },
+    { name: "Locales", link: "#shops-anchor" },
+    { name: "Contacto", link: "#contact-anchor" },
+    { name: "Recetas", link: "#recipes-anchor" },
   ],
   slider: {
     title: "Humaya",
     description:
       "Los productos HUMAYA son elaborados desde hace más de 50 años fiel a las tradiciones familiares y sabores caseros, acompañándote en los momentos más importantes de la vida",
     link: {
-      anchor: "#about-us",
+      anchor: "#about-us-anchor",
       content: "Conocenos",
     },
   },
@@ -287,7 +287,7 @@ function buildMenu() {
     buildMenuElem(container);
   });
 
-  burguerBtn.addEventListener('click', (btn)=>{
+  burguerBtn.addEventListener('click', ()=>{
     containers.forEach((menu)=>{
         if(menu.classList.contains('header-menu')){
             menu.classList.toggle('nav-menu-visible');
@@ -308,6 +308,12 @@ function buildMenuElem(container) {
     menuElem.classList.add('nav-menu-item');
     menuElem.appendChild(link);
     container.appendChild(menuElem);
+
+    link.addEventListener('click', (e)=>{
+      if(e.target.parentNode.parentNode.classList.contains('nav-menu-visible')){
+        document.querySelector('.menu-btn').click();
+      }
+    });
   });
 }
 
@@ -403,8 +409,7 @@ function buildProductBanner(product, index){
     seeMoreLink.textContent = '+ Info';
     seeMoreLink.setAttribute('href', `#nutritional-info-${index+1}`)
     if(product.category === 'processed'){
-      seeMoreLink.classList.remove('light');
-      seeMoreLink.classList.add('dark');
+      seeMoreLink.classList.replace('light', 'dark');
     }
     nutritionInfo.style.display = 'none';
 

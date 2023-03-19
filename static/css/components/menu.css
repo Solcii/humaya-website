@@ -133,7 +133,8 @@ header .nav-bar.scrolled{
         color: #fff;
         font-weight: 600;
     }
-    .nav-menu-link:hover {
+    .nav-menu-link:hover,
+    .nav-bar.scrolled .nav-menu-link:hover {
         color: #fff;;
     }
     .menu-btn {

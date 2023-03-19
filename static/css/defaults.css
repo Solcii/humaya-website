@@ -8,6 +8,7 @@
 
 html{
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -55,4 +56,10 @@ body{
 .link-btn.dark:hover{
     color: #BCA177;
     background-color: #684723;
+}
+
+.section-anchor{
+    margin-top: -7.9rem;
+    padding-top: 7.9rem;
+    visibility: hidden;
 }
