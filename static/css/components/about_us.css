@@ -1,0 +1,83 @@
+#about-us{
+    background-color: #302E2E;
+}
+#about-us .section-main-wrapper{
+    color: #BCA177;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 'text clients';
+    gap: 3rem;
+    align-items: center;
+    max-width: 90rem;
+    margin: auto;
+}
+
+#about-us .section-main-wrapper .description{
+    grid-area: text;
+    position: relative;
+    padding-left: 4rem;
+}
+
+#about-us .section-main-wrapper .description:before{
+    content: '\f10d';
+    font-family: 'FontAwesome';
+    font-size: 3rem;
+    color: #fff;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+}
+
+#about-us .section-main-wrapper .clients-banner{
+    grid-area: clients;
+}
+
+.clients-banner h3{
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+.clients-banner .cards-container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 35rem;
+    margin: auto;
+}
+
+.clients-banner .card{
+    max-width: 10rem;
+    display: inline-block;
+}
+
+.clients-banner .card img{
+    max-width: 100%;
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 0.2rem;
+    border: 2px solid #fff;
+}
+
+.clients-banner .card p{
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    max-width: 80%;
+    margin: 0.8rem auto 0;
+}
+
+@media (max-width: 768px) {
+    #about-us .section-main-wrapper{
+        grid-template-areas: 'text'
+                              'clients';
+        grid-template-columns: 100%;
+        padding: 6rem 3rem;
+    }
+    #about-us .section-main-wrapper .description{
+        margin-bottom: 3rem;
+    }
+}

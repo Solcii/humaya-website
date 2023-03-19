@@ -393,7 +393,7 @@ function buildProductBanner(product, index){
     productName.classList.add('product-name');
     productDesc.classList.add('product-description');
     productPres.classList.add('product-presentation');
-    seeMoreLink.classList.add('link-btn');
+    seeMoreLink.classList.add('link-btn', 'light');
 
     productImg.setAttribute('src', product.image_name);
     productImg.setAttribute('alt', product.name);
@@ -402,6 +402,10 @@ function buildProductBanner(product, index){
     productPres.textContent = product.presentation;
     seeMoreLink.textContent = '+ Info';
     seeMoreLink.setAttribute('href', `#nutritional-info-${index+1}`)
+    if(product.category === 'processed'){
+      seeMoreLink.classList.remove('light');
+      seeMoreLink.classList.add('dark');
+    }
     nutritionInfo.style.display = 'none';
 
     productInfoWrapper.appendChild(productName);
@@ -456,6 +460,7 @@ function buildAboutUsInfo(){
 
     secTitle.textContent = data.about_us.title;
     description.textContent = data.about_us.description;
+    description.classList.add('description');
 
     mainWrapper.appendChild(description);
     mainWrapper.appendChild(clientsBanner);
@@ -466,14 +471,18 @@ function buildAboutUsInfo(){
 function buildClientsBanner(clientsInfo){
     const banner = document.createElement('div');
     const bannerTitle = document.createElement('h3');
+    const cardsWrapper = document.createElement('div');
     banner.classList.add('clients-banner');
+    cardsWrapper.classList.add('cards-container');
     bannerTitle.textContent = clientsInfo.title;
-    banner.appendChild(bannerTitle);
 
     clientsInfo.clients_list.forEach((e)=>{
         const card = buildCardWithImageAndText(e);
-        banner.appendChild(card);
+        cardsWrapper.appendChild(card);
     })
+
+    banner.appendChild(bannerTitle);
+    banner.appendChild(cardsWrapper);
 
     return banner;
 }
@@ -652,7 +661,7 @@ function buildRecipeCard(recipe){
   buildQualityBanner();
   buildProductSection();
   buildAboutUsInfo();
-  buildContactSection();
-  buildShopsBanner();
-  buildRecipesBanner();
+  //buildContactSection();
+  //buildShopsBanner();
+  //buildRecipesBanner();
 })();
