@@ -48,7 +48,8 @@ header .nav-bar.scrolled{
     color: #302E2E;
 }
 
-.nav-menu-link:hover {
+.nav-menu-link:hover,
+.nav-bar.scrolled .nav-menu-link:hover {
     color: #BCA177;
 }
 
