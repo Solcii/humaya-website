@@ -385,6 +385,7 @@ function buildProductBanner(product, index){
     const productName = document.createElement('h3');
     const productDesc = document.createElement('p');
     const productPres = document.createElement('p');
+    const seeMoreLinkContainer = document.createElement('div');
     const seeMoreLink = document.createElement('a');
     const nutritionInfo = buildNutritionalInfoTable(product.nutritional_info, index+1);
 
@@ -399,6 +400,7 @@ function buildProductBanner(product, index){
     productName.classList.add('product-name');
     productDesc.classList.add('product-description');
     productPres.classList.add('product-presentation');
+    seeMoreLinkContainer.classList.add('link-btn-container');
     seeMoreLink.classList.add('link-btn', 'light');
 
     productImg.setAttribute('src', product.image_name);
@@ -413,10 +415,12 @@ function buildProductBanner(product, index){
     }
     nutritionInfo.style.display = 'none';
 
+    seeMoreLinkContainer.appendChild(seeMoreLink)
+
     productInfoWrapper.appendChild(productName);
     productInfoWrapper.appendChild(productDesc);
     productInfoWrapper.appendChild(productPres);
-    productInfoWrapper.appendChild(seeMoreLink);
+    productInfoWrapper.appendChild(seeMoreLinkContainer);
     productInfoWrapper.appendChild(nutritionInfo);
 
     banner.appendChild(productImg);
@@ -546,6 +550,7 @@ function buildContactForm(){
     const commentsWrapper = document.createElement('div');
     const labelComments = document.createElement('label');
     const inputComments = document.createElement('textarea');
+    const btnContainer = document.createElement('div');
     const sendBtn = document.createElement('button');
 
     labelName.setAttribute('for', 'name');
@@ -579,11 +584,14 @@ function buildContactForm(){
     emailWrapper.appendChild(inputEmail);
     commentsWrapper.appendChild(labelComments);
     commentsWrapper.appendChild(inputComments);
+
+    btnContainer.classList.add('link-btn-container');
+    btnContainer.appendChild(sendBtn);
     
     form.appendChild(nameWrapper)
     form.appendChild(emailWrapper);
     form.appendChild(commentsWrapper);
-    form.appendChild(sendBtn)
+    form.appendChild(btnContainer)
 
     form.addEventListener('submit', (e)=>{
       e.preventDefault();
@@ -631,6 +639,7 @@ function buildRecipesBanner(){
     const { secTitle, mainWrapper } = buildBaseSection();
     const description = document.createElement('p');
     const recipesWrapper = document.createElement('div');
+    const seeMoreRecipesContainer = document.createElement('div');
     const seeMoreRecipes = document.createElement('a');
 
     recipesWrapper.classList.add('recipes-banner');
@@ -647,9 +656,12 @@ function buildRecipesBanner(){
     seeMoreRecipes.setAttribute('target', '_blank');
     seeMoreRecipes.classList.add('link-btn', 'light');
 
+    seeMoreRecipesContainer.classList.add('link-btn-container');
+    seeMoreRecipesContainer.appendChild(seeMoreRecipes);
+
     mainWrapper.appendChild(description);
     mainWrapper.appendChild(recipesWrapper);
-    mainWrapper.appendChild(seeMoreRecipes);
+    mainWrapper.appendChild(seeMoreRecipesContainer);
 
     container.appendChild(secTitle);
     container.appendChild(mainWrapper);   
@@ -661,6 +673,7 @@ function buildRecipeCard(recipe){
     const recipeText = document.createElement('div');
     const recipeName = document.createElement('p');
     const recipeDesc = document.createElement('p');
+    const seeRecipesLinkContainer = document.createElement('div');
     const seeRecipeLink = document.createElement('a');
 
     recipeCard.classList.add('recipe-card');
@@ -681,9 +694,12 @@ function buildRecipeCard(recipe){
     seeRecipeLink.setAttribute('target', '_blank');
     seeRecipeLink.classList.add('link-btn', 'dark');
 
+    seeRecipesLinkContainer.classList.add('link-btn-container');
+    seeRecipesLinkContainer.appendChild(seeRecipeLink);
+
     recipeText.appendChild(recipeName);
     recipeText.appendChild(recipeDesc);
-    recipeText.appendChild(seeRecipeLink);
+    recipeText.appendChild(seeRecipesLinkContainer);
 
     recipeCard.appendChild(recipeImg);
     recipeCard.appendChild(recipeText);

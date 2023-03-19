@@ -56,12 +56,15 @@
     margin-bottom: 2rem;
 }
 
-#recipes .section-main-wrapper .recipes-banner .recipe-card .text-container .link-btn{
-    font-size: 1rem;
-    margin: 1rem auto 0;
+#recipes .section-main-wrapper .recipes-banner .recipe-card .text-container .link-btn-container{
+    margin: 1rem auto;
 }
 
-#recipes .section-main-wrapper .link-btn.light{
+#recipes .section-main-wrapper .recipes-banner .recipe-card .text-container .link-btn{
+    font-size: 1rem;
+}
+
+#recipes .section-main-wrapper .link-btn-container{
     margin: 3rem 0 0 auto;
 }
 
@@ -78,7 +81,7 @@
         height: 15rem;
         min-height: 100%;
     }
-    #recipes .section-main-wrapper .link-btn.light{
+    #recipes .section-main-wrapper .link-btn-container{
         margin-right: auto;
     }
 }
