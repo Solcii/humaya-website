@@ -314,16 +314,19 @@ function buildMenuElem(container) {
 
 function buildSlider() {
   const container = document.querySelector("#slider");
+  const textContainer = document.createElement('div');
   const title = document.createElement("h1");
   const description = document.createElement("p");
   const link = document.createElement("a");
+  textContainer.classList.add('text-container');
   title.textContent = data.slider.title;
   description.textContent = data.slider.description;
   link.textContent = data.slider.link.content;
   link.setAttribute("href", data.slider.link.anchor);
-  container.appendChild(title);
-  container.appendChild(description);
-  container.appendChild(link);
+  textContainer.appendChild(title);
+  textContainer.appendChild(description);
+  textContainer.appendChild(link);
+  container.appendChild(textContainer);
 }
 
 // ** ========== Quality ========== **
