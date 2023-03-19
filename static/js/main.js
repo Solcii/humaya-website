@@ -611,7 +611,7 @@ function buildRecipesBanner(){
     const recipesWrapper = document.createElement('div');
     const seeMoreRecipes = document.createElement('a');
 
-    recipesWrapper.classList.add('recipes-carousel');
+    recipesWrapper.classList.add('recipes-banner');
 
     data.recipes.recipes_list.forEach((e)=>{
         cardRecipe = buildRecipeCard(e);
@@ -623,7 +623,7 @@ function buildRecipesBanner(){
     seeMoreRecipes.textContent = data.recipes.external_link.link_text;
     seeMoreRecipes.setAttribute('href', data.recipes.external_link.link);
     seeMoreRecipes.setAttribute('target', '_blank');
-    seeMoreRecipes.classList.add('link-btn');
+    seeMoreRecipes.classList.add('link-btn', 'light');
 
     mainWrapper.appendChild(description);
     mainWrapper.appendChild(recipesWrapper);
@@ -641,6 +641,8 @@ function buildRecipeCard(recipe){
     const recipeDesc = document.createElement('p');
     const seeRecipeLink = document.createElement('a');
 
+    recipeCard.classList.add('recipe-card');
+
     recipeImg.setAttribute('src', recipe.image_name);
     recipeImg.setAttribute('alt', recipe.name);
 
@@ -655,7 +657,7 @@ function buildRecipeCard(recipe){
     seeRecipeLink.textContent = 'Preparación';
     seeRecipeLink.setAttribute('href', recipe.link);
     seeRecipeLink.setAttribute('target', '_blank');
-    seeRecipeLink.classList.add('link-btn');
+    seeRecipeLink.classList.add('link-btn', 'dark');
 
     recipeText.appendChild(recipeName);
     recipeText.appendChild(recipeDesc);
@@ -675,5 +677,5 @@ function buildRecipeCard(recipe){
   buildAboutUsInfo();
   buildContactSection();
   buildShopsBanner();
-  //buildRecipesBanner();
+  buildRecipesBanner();
 })();
