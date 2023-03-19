@@ -674,6 +674,6 @@ function buildRecipeCard(recipe){
   buildProductSection();
   buildAboutUsInfo();
   buildContactSection();
-  //buildShopsBanner();
+  buildShopsBanner();
   //buildRecipesBanner();
 })();
