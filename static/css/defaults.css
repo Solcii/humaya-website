@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +12,26 @@ html{
 
 body{
     color: #000;
-    font-family: 'Karla', 'Mulish', 'Titillium Web', sans-serif;
-    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+}
+
+.link-btn{
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: block;
+    width: fit-content;
+    font-size: 1.3rem;
+}
+
+.link-btn.light{
+    border: 3px solid #BCA177;
+    color: #BCA177;
+}
+
+.link-btn.dark{
+    border: 2px solid #684723;
+    color: #684723;
 }
