@@ -1,0 +1,99 @@
+footer{
+    background-color: #000;
+}
+
+footer .site-footer{
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    gap: 3rem;
+    align-items: center;
+}
+
+footer .logo{
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+}
+
+footer .menu-wrapper p{
+    color: #BCA177;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.footer-menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: fit-content;
+    column-gap: 6rem;
+    row-gap: 1rem;
+}
+
+.footer-menu .nav-menu-item{
+    margin: 0;
+    list-style: none;
+}
+
+.footer-menu .nav-menu-link{
+    font-size: 1.4rem;
+    padding: 0;
+}
+
+footer .brand{
+    background-color: #BCA177;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+footer .brand p{
+    font-size: 1.2rem;
+    text-align: right;
+    padding-right: 1rem;
+    border-right: 1px solid #fff;
+}
+
+footer .brand .links{
+    padding-left: 1rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+}
+footer .brand a {
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+footer .brand i {
+    color: #fff;
+}
+
+#github:hover {
+    color: #ee5030;
+    transition: .5s;
+}
+
+#linkedin:hover {
+    color: #2867b2;
+    transition: .5s;
+}
+
+@media (max-width: 768px) {
+    footer .site-footer{
+        grid-template-columns: 1fr 1fr;
+    }
+    footer .site-footer img{
+        margin: auto;
+        max-width: 100%;
+    }
+    footer .site-footer .menu-wrapper{
+        max-width: 100%;
+    }
+    footer .site-footer .menu-wrapper .footer-menu{
+        grid-template-columns: 100%;
+    }
+}
