@@ -502,6 +502,8 @@ function buildContactSection(){
     image.setAttribute('src', data.contact.image_name);
     image.setAttribute('alt', data.contact.title);
 
+    formWrapper.classList.add('text-wrapper');
+
     formWrapper.appendChild(description);
     formWrapper.appendChild(contactForm);
     mainWrapper.appendChild(image);
@@ -540,10 +542,11 @@ function buildContactForm(){
     labelComments.textContent = 'Comentarios:';
     inputComments.setAttribute('name', 'comments');
     inputComments.setAttribute('placeholder', '¡Hola, soy Jane Doe!');
+    inputComments.setAttribute('rows', '5');
 
     sendBtn.textContent = 'Enviar';
     sendBtn.setAttribute('type', 'submit');
-    sendBtn.classList.add('link-btn');
+    sendBtn.classList.add('link-btn', 'dark');
 
     nameWrapper.appendChild(labelName);
     nameWrapper.appendChild(inputName);
@@ -661,7 +664,7 @@ function buildRecipeCard(recipe){
   buildQualityBanner();
   buildProductSection();
   buildAboutUsInfo();
-  //buildContactSection();
+  buildContactSection();
   //buildShopsBanner();
   //buildRecipesBanner();
 })();

@@ -1,0 +1,86 @@
+#contact .section-title{
+    background-color: #302E2E;
+}
+#contact .section-main-wrapper{
+    display: grid;
+    grid-template-areas: 'image form';
+    grid-template-columns: 40% 60%;
+}
+
+#contact .section-main-wrapper img{
+    grid-area: image;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#contact .section-main-wrapper .text-wrapper{
+    grid-area: form;
+    padding: 4rem 6rem;
+    color: #684723;
+}
+#contact .section-main-wrapper .text-wrapper p{
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+#contact .section-main-wrapper .text-wrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#contact .section-main-wrapper .text-wrapper form input,
+#contact .section-main-wrapper .text-wrapper form label,
+#contact .section-main-wrapper .text-wrapper form textarea{
+    display: block;
+}
+
+#contact .section-main-wrapper .text-wrapper form label{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+#contact .section-main-wrapper .text-wrapper form input,
+#contact .section-main-wrapper .text-wrapper form textarea{
+    border: none;
+    background-color: #684723;
+    color: #fff;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 0.2rem;
+}
+
+#contact .section-main-wrapper .text-wrapper form textarea{
+    resize: none;
+}
+
+#contact .section-main-wrapper .text-wrapper form input:focus,
+#contact .section-main-wrapper .text-wrapper form textarea:focus{
+    outline-color: #BCA177;
+}
+
+#contact .section-main-wrapper .text-wrapper form input::placeholder,
+#contact .section-main-wrapper .text-wrapper form textarea::placeholder{
+    color: #BCA177;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+#contact .section-main-wrapper .text-wrapper form .link-btn{
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    #contact .section-main-wrapper{
+        grid-template-areas: 'form'
+                              'image';
+        grid-template-columns: 100%;
+    }
+
+    #contact .section-main-wrapper img{
+        max-height: 20rem;
+    }
+}
