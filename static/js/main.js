@@ -417,6 +417,15 @@ function buildProductBanner(product, index){
     banner.appendChild(productImg);
     banner.appendChild(productInfoWrapper);
 
+    seeMoreLink.addEventListener('click', (e)=>{
+      e.preventDefault();
+      console.log(e)
+      const target = e.target.getAttribute('href');
+      const popup = document.querySelector(`${target}`);
+      popup.style.display = 'block';
+      document.querySelector('body').classList.add('popup-open');
+    });
+
     return banner
 }
 
@@ -425,11 +434,13 @@ function buildNutritionalInfoTable(productInfo, index){
     const title = document.createElement('h4');
     const description = document.createElement('p');
     const table = document.createElement('table');
+    const closeIcon = document.createElement('button');
 
     container.classList.add('nutritional-info');
     container.setAttribute('id', `nutritional-info-${index}`)
     title.textContent = 'Información nutricional:';
     description.textContent = productInfo.portion;
+    closeIcon.classList.add('close-icon');
 
     productInfo.table.forEach((e) =>{
         const row = document.createElement('tr')
@@ -443,9 +454,15 @@ function buildNutritionalInfoTable(productInfo, index){
         table.appendChild(row);
     });
 
+    container.appendChild(closeIcon);
     container.appendChild(title);
     container.appendChild(description);
     container.appendChild(table);
+
+    closeIcon.addEventListener('click', (e)=>{
+      e.target.parentNode.style.display = 'none';
+      document.querySelector('body').classList.remove('popup-open');
+    })
 
     return container;
 }
