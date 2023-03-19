@@ -1,0 +1,55 @@
+#quality{
+    background-color: #302E2E;
+    padding: 4rem;
+    color: #fff;
+}
+
+#quality h2{
+    font-weight: 600;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#quality .section-main-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin: auto;
+}
+
+#quality .section-main-wrapper .card{
+    max-width: 11rem;
+}
+
+#quality .section-main-wrapper .card img{
+    max-width: 10rem;
+    display: block;
+    margin: 0 auto 2rem;
+}
+
+#quality .section-main-wrapper .card p{
+    color: #BCA177;;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #quality {
+        padding: 4rem 1rem;
+    }
+    #quality h2{
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    #quality .section-main-wrapper{
+        width: 100%;
+        max-width: none;
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+    #quality .section-main-wrapper .card p{
+        font-size: 1.2rem;
+    }
+}
