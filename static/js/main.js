@@ -531,18 +531,21 @@ function buildContactForm(){
     inputName.setAttribute('type', 'text');
     inputName.setAttribute('name', 'name');
     inputName.setAttribute('placeholder', 'Jane Doe');
+    inputName.setAttribute('required', true);
 
     labelEmail.setAttribute('for', 'email');
     labelEmail.textContent = 'Email:';
     inputEmail.setAttribute('type', 'email');
     inputEmail.setAttribute('name', 'email');
     inputEmail.setAttribute('placeholder', 'janedoe@gmail.com');
+    inputEmail.setAttribute('required', true);
 
     labelComments.setAttribute('for', 'comments');
     labelComments.textContent = 'Comentarios:';
     inputComments.setAttribute('name', 'comments');
     inputComments.setAttribute('placeholder', '¡Hola, soy Jane Doe!');
     inputComments.setAttribute('rows', '5');
+    inputComments.setAttribute('required', true);
 
     sendBtn.textContent = 'Enviar';
     sendBtn.setAttribute('type', 'submit');
@@ -559,6 +562,12 @@ function buildContactForm(){
     form.appendChild(emailWrapper);
     form.appendChild(commentsWrapper);
     form.appendChild(sendBtn)
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      window.alert('Su mensaje se ha registrado. Nos pondremos en contacto a la mayor brevedad posible. ¡Muchas gracias!');
+      form.reset();
+    });
 
     return form
 }
