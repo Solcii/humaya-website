@@ -4,11 +4,14 @@
     color: #fff;
 }
 
-#quality h2{
+#quality h2.section-title{
     font-weight: 600;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 4rem;
+    background-color: transparent;
+    text-transform: none;
+    padding: 0;
 }
 
 #quality .section-main-wrapper{
